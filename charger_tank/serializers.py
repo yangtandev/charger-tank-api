@@ -15,12 +15,9 @@ class TaipeiDateTimeField(serializers.DateTimeField):
     def to_representation(self, value):
         if not value:
             return None
-        # 確保是有時區的 datetime
         if timezone.is_naive(value):
             value = timezone.make_aware(value, timezone.utc)
-        # 轉到台北
         value = value.astimezone(taipei_tz)
-        # 回傳 ISO 格式
         return value.isoformat()
 
 
@@ -30,10 +27,15 @@ class ChargerTankCurrentSerializer(serializers.ModelSerializer):
     class Meta:
         model = ChargerTankCurrent
         fields = '__all__'
-        extra_kwargs = {f's{str(i).zfill(2)}': {'required': False} for i in range(1, 19)}
+        extra_kwargs = {
+            f's{str(i).zfill(2)}': {'required': False} for i in list(range(1, 8)) + list(range(9, 19))
+        }
+        extra_kwargs.update({
+            's08_1': {'required': False},
+            's08_2': {'required': False},
+        })
 
     def create(self, validated_data):
-        # upsert 邏輯
         loc = validated_data.get('location')
         tt  = validated_data.get('temp_type')
         instance = ChargerTankCurrent.objects.filter(location=loc, temp_type=tt).first()
@@ -53,7 +55,13 @@ class ChargerTankHistorySerializer(serializers.ModelSerializer):
     class Meta:
         model = ChargerTankHistory
         fields = '__all__'
-        extra_kwargs = {f's{str(i).zfill(2)}': {'required': False} for i in range(1, 19)}
+        extra_kwargs = {
+            f's{str(i).zfill(2)}': {'required': False} for i in list(range(1, 8)) + list(range(9, 19))
+        }
+        extra_kwargs.update({
+            's08_1': {'required': False},
+            's08_2': {'required': False},
+        })
 
     def create(self, validated_data):
         validated_data['record_datetime'] = timezone.now().astimezone(taipei_tz)
