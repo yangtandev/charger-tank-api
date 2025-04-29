@@ -28,12 +28,8 @@ class ChargerTankCurrentSerializer(serializers.ModelSerializer):
         model = ChargerTankCurrent
         fields = '__all__'
         extra_kwargs = {
-            f's{str(i).zfill(2)}': {'required': False} for i in list(range(1, 8)) + list(range(9, 19))
+            f's{str(i).zfill(2)}': {'required': False} for i in list(range(1, 19))
         }
-        extra_kwargs.update({
-            's08_1': {'required': False},
-            's08_2': {'required': False},
-        })
 
     def create(self, validated_data):
         loc = validated_data.get('location')
@@ -56,12 +52,8 @@ class ChargerTankHistorySerializer(serializers.ModelSerializer):
         model = ChargerTankHistory
         fields = '__all__'
         extra_kwargs = {
-            f's{str(i).zfill(2)}': {'required': False} for i in list(range(1, 8)) + list(range(9, 19))
+            f's{str(i).zfill(2)}': {'required': False} for i in list(range(1, 19))
         }
-        extra_kwargs.update({
-            's08_1': {'required': False},
-            's08_2': {'required': False},
-        })
 
     def create(self, validated_data):
         validated_data['record_datetime'] = timezone.now().astimezone(taipei_tz)
