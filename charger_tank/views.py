@@ -24,10 +24,14 @@ class FilterableQuerysetMixin:
 
     def get_queryset(self):
         queryset = super().get_queryset()
+        temp_type = self.request.query_params.get('temp_type')
         start = self.request.query_params.get('start')
         end = self.request.query_params.get('end')
         count = self.request.query_params.get('count')
         order = self.request.query_params.get('order')
+
+        if temp_type:
+            queryset = queryset.filter(temp_type=temp_type)
 
         if start:
             start_dt = parse_with_timezone(start)

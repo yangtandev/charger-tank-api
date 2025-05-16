@@ -1,4 +1,5 @@
 from django.apps import AppConfig
+import threading
 
 
 class ChargerTankConfig(AppConfig):
@@ -7,3 +8,6 @@ class ChargerTankConfig(AppConfig):
 
     def ready(self):
         from . import signals
+        from .schedulers import start_scheduler
+
+        threading.Thread(target=start_scheduler, daemon=True).start()
