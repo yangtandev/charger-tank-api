@@ -13,4 +13,8 @@ urlpatterns = [
     # Status
     path('status/', views.ChargerTankStatusListCreateView.as_view()),
     path('status/<int:pk>/', views.ChargerTankStatusDetailView.as_view()),
+
+    # Status History
+    path('status-history/', views.ChargerTankStatusHistoryListCreateView.as_view()),
+    path('status-history/<int:pk>/', views.ChargerTankStatusHistoryDetailView.as_view()),
 ]

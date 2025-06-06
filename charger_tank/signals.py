@@ -1,6 +1,6 @@
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from .models import ChargerTankCurrent, ChargerTankHistory
+from .models import ChargerTankCurrent, ChargerTankHistory, ChargerTankStatus, ChargerTankStatusHistory
 
 @receiver(post_save, sender=ChargerTankCurrent)
 def copy_to_history(sender, instance, created, **kwargs):
@@ -27,4 +27,29 @@ def copy_to_history(sender, instance, created, **kwargs):
         s16=instance.s16,
         s17=instance.s17,
         s18=instance.s18,
+    )
+
+@receiver(post_save, sender=ChargerTankStatus)
+def copy_to_status_history(sender, instance, created, **kwargs):
+    # 將 status 的 instance 資料複製到 status_history 中
+    ChargerTankStatusHistory.objects.create(
+        location=instance.location,
+        env_temp=instance.env_temp,
+        record_datetime=instance.record_datetime,
+        charger_status01=instance.charger_status01,
+        charger_status02=instance.charger_status02,
+        charger_status03=instance.charger_status03,
+        charger_status04=instance.charger_status04,
+        charger_status05=instance.charger_status05,
+        charger_status06=instance.charger_status06,
+        charger_status07=instance.charger_status07,
+        charger_status08=instance.charger_status08,
+        charger_status09=instance.charger_status09,
+        charger_status10=instance.charger_status10,
+        charger_status11=instance.charger_status11,
+        charger_status12=instance.charger_status12,
+        charger_status13=instance.charger_status13,
+        charger_status14=instance.charger_status14,
+        charger_status15=instance.charger_status15,
+        charger_status16=instance.charger_status16
     )

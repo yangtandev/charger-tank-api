@@ -2,7 +2,7 @@ from rest_framework import serializers
 from django.utils import timezone
 import pytz
 
-from .models import ChargerTankCurrent, ChargerTankHistory, ChargerTankStatus
+from .models import ChargerTankCurrent, ChargerTankHistory, ChargerTankStatus, ChargerTankStatusHistory
 
 # 台北時區
 taipei_tz = pytz.timezone('Asia/Taipei')
@@ -82,3 +82,18 @@ class ChargerTankStatusSerializer(serializers.ModelSerializer):
     def update(self, instance, validated_data):
         validated_data['record_datetime'] = timezone.now().astimezone(taipei_tz)
         return super().update(instance, validated_data)
+
+class ChargerTankStatusHistorySerializer(serializers.ModelSerializer):
+    record_datetime = TaipeiDateTimeField(read_only=True)
+
+    class Meta:
+        model = ChargerTankStatusHistory
+        fields = '__all__'
+        extra_kwargs = {
+            'env_temp': {'required': False},
+            **{f'charger_status{str(i).zfill(2)}': {'required': False} for i in range(1, 17)}
+        }
+
+    def create(self, validated_data):
+        validated_data['record_datetime'] = timezone.now().astimezone(taipei_tz)
+        return super().create(validated_data)

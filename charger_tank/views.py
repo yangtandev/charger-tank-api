@@ -1,9 +1,10 @@
 from rest_framework import generics
-from .models import ChargerTankCurrent, ChargerTankHistory, ChargerTankStatus
+from .models import ChargerTankCurrent, ChargerTankHistory, ChargerTankStatus, ChargerTankStatusHistory
 from .serializers import (
     ChargerTankCurrentSerializer,
     ChargerTankHistorySerializer,
-    ChargerTankStatusSerializer
+    ChargerTankStatusSerializer,
+    ChargerTankStatusHistorySerializer
 )
 from dateutil.parser import parse as parse_datetime
 from datetime import timezone, timedelta
@@ -88,3 +89,12 @@ class ChargerTankStatusListCreateView(FilterableQuerysetMixin, generics.ListCrea
 class ChargerTankStatusDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = ChargerTankStatus.objects.all()
     serializer_class = ChargerTankStatusSerializer
+
+# ChargerTankStatusHistory
+class ChargerTankStatusHistoryListCreateView(FilterableQuerysetMixin, generics.ListCreateAPIView):
+    queryset = ChargerTankStatusHistory.objects.all()
+    serializer_class = ChargerTankStatusHistorySerializer
+
+class ChargerTankStatusHistoryDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = ChargerTankStatusHistory.objects.all()
+    serializer_class = ChargerTankStatusHistorySerializer

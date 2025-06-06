@@ -84,3 +84,29 @@ class ChargerTankStatus(models.Model):
 
     class Meta:
         db_table = 'charger_tank_status'
+
+# 4. 狀態歷史表（記錄環境溫度與 16 台充電機狀態）
+class ChargerTankStatusHistory(models.Model):
+    id = models.AutoField(primary_key=True)
+    location = models.CharField(max_length=10, db_column='Location')
+    record_datetime = models.DateTimeField(default=timezone.now, db_column='RecDT')
+    env_temp = models.IntegerField(null=True, blank=True, db_column='EnvTemp')
+    charger_status01 = models.BooleanField(null=True, blank=True, db_column='ChargerStatus01')
+    charger_status02 = models.BooleanField(null=True, blank=True, db_column='ChargerStatus02')
+    charger_status03 = models.BooleanField(null=True, blank=True, db_column='ChargerStatus03')
+    charger_status04 = models.BooleanField(null=True, blank=True, db_column='ChargerStatus04')
+    charger_status05 = models.BooleanField(null=True, blank=True, db_column='ChargerStatus05')
+    charger_status06 = models.BooleanField(null=True, blank=True, db_column='ChargerStatus06')
+    charger_status07 = models.BooleanField(null=True, blank=True, db_column='ChargerStatus07')
+    charger_status08 = models.BooleanField(null=True, blank=True, db_column='ChargerStatus08')
+    charger_status09 = models.BooleanField(null=True, blank=True, db_column='ChargerStatus09')
+    charger_status10 = models.BooleanField(null=True, blank=True, db_column='ChargerStatus10')
+    charger_status11 = models.BooleanField(null=True, blank=True, db_column='ChargerStatus11')
+    charger_status12 = models.BooleanField(null=True, blank=True, db_column='ChargerStatus12')
+    charger_status13 = models.BooleanField(null=True, blank=True, db_column='ChargerStatus13')
+    charger_status14 = models.BooleanField(null=True, blank=True, db_column='ChargerStatus14')
+    charger_status15 = models.BooleanField(null=True, blank=True, db_column='ChargerStatus15')
+    charger_status16 = models.BooleanField(null=True, blank=True, db_column='ChargerStatus16')
+
+    class Meta:
+        db_table = 'charger_tank_status_history'
