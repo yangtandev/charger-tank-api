@@ -1,40 +1,19 @@
 import pyodbc
+import threading
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from .models import ChargerTankCurrent, ChargerTankHistory
 from dbconfig.models import MSSQLConfig
 
-@receiver(post_save, sender=ChargerTankCurrent)
-def copy_to_history(sender, instance, created, **kwargs):
-    # 將 current 的 instance 資料複製到 history 中
-    ChargerTankHistory.objects.create(
-        location=instance.location,
-        temp_type=instance.temp_type,
-        record_datetime=instance.record_datetime,
-        s01=instance.s01,
-        s02=instance.s02,
-        s03=instance.s03,
-        s04=instance.s04,
-        s05=instance.s05,
-        s06=instance.s06,
-        s07=instance.s07,
-        s08=instance.s08,
-        s09=instance.s09,
-        s10=instance.s10,
-        s11=instance.s11,
-        s12=instance.s12,
-        s13=instance.s13,
-        s14=instance.s14,
-        s15=instance.s15,
-        s16=instance.s16,
-        s17=instance.s17,
-        s18=instance.s18,
-    )
+def process_value(val):
+    return 0 if val == 999 else int(round(val / 10))
 
+def async_upsert_to_mssql(instance, processed_values):
     try:
         config = MSSQLConfig.objects.latest('updated_at')
         schema = config.schema or 'dbo'
         full_table_name = f"[{schema}].[{config.table_name}]"
+
         conn_str = (
             f"DRIVER={{{config.driver}}};"
             f"SERVER={config.host},{config.port};"
@@ -44,48 +23,77 @@ def copy_to_history(sender, instance, created, **kwargs):
             f"TrustServerCertificate=yes;"
         )
 
+        s_values = [
+            processed_values['s01'], processed_values['s02'], processed_values['s03'], processed_values['s04'],
+            processed_values['s05'], processed_values['s06'], processed_values['s07'], processed_values['s08'],
+            processed_values['s09'], processed_values['s10'], processed_values['s11'], processed_values['s12'],
+            processed_values['s13'], processed_values['s14'], processed_values['s15'], processed_values['s16'],
+            processed_values['s17'], processed_values['s18'],
+        ]
+
         with pyodbc.connect(conn_str, timeout=5) as conn:
             cursor = conn.cursor()
 
-            # Upsert record by using MERGE
             sql = f"""
             MERGE INTO {full_table_name} AS target
-            USING (VALUES (?, ?, ?)) AS source (Location, Temptype, RecDT)
-            ON (target.Location = source.Location AND target.Temptype = source.Temptype AND target.RecDT = source.RecDT)
+            USING (VALUES (?, ?, ?)) AS source (Location, TempType, RecDT)
+            ON (target.Location = source.Location AND target.TempType = source.TempType AND target.RecDT = source.RecDT)
             WHEN MATCHED THEN
                 UPDATE SET
                     S01 = ?, S02 = ?, S03 = ?, S04 = ?, S05 = ?, S06 = ?, S07 = ?, S08 = ?, S09 = ?, S10 = ?,
                     S11 = ?, S12 = ?, S13 = ?, S14 = ?, S15 = ?, S16 = ?, S17 = ?, S18 = ?
             WHEN NOT MATCHED THEN
-                INSERT (Location, Temptype, RecDT, S01, S02, S03, S04, S05, S06, S07, S08, S09, S10, S11, S12, S13, S14, S15, S16, S17, S18)
+                INSERT (Location, TempType, RecDT, S01, S02, S03, S04, S05, S06, S07, S08, S09, S10, S11, S12, S13, S14, S15, S16, S17, S18)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
             """
 
             params = (
-                # source (Location, Temptype, RecDT)
                 instance.location,
                 instance.temp_type,
                 instance.record_datetime,
-
-                # update SET S01~S18
-                instance.s01, instance.s02, instance.s03, instance.s04, instance.s05, instance.s06, instance.s07, instance.s08,
-                instance.s09, instance.s10, instance.s11, instance.s12, instance.s13, instance.s14, instance.s15, instance.s16,
-                instance.s17, instance.s18,
-
-                # insert VALUES (Location, Temptype, RecDT, S01~S18)
+                *s_values,
                 instance.location,
                 instance.temp_type,
                 instance.record_datetime,
-                instance.s01, instance.s02, instance.s03, instance.s04, instance.s05, instance.s06, instance.s07, instance.s08,
-                instance.s09, instance.s10, instance.s11, instance.s12, instance.s13, instance.s14, instance.s15, instance.s16,
-                instance.s17, instance.s18,
+                *s_values,
             )
 
             cursor.execute(sql, params)
             conn.commit()
 
     except MSSQLConfig.DoesNotExist:
-        pass
+        print("[MSSQL upsert error] No MSSQL config found.")
     except Exception as e:
         print(f"[MSSQL upsert error] {e}")
 
+@receiver(post_save, sender=ChargerTankCurrent)
+def copy_to_history(sender, instance, created, **kwargs):
+    processed_values = {
+        's01': process_value(instance.s01),
+        's02': process_value(instance.s02),
+        's03': process_value(instance.s03),
+        's04': process_value(instance.s04),
+        's05': process_value(instance.s05),
+        's06': process_value(instance.s06),
+        's07': process_value(instance.s07),
+        's08': process_value(instance.s08),
+        's09': process_value(instance.s09),
+        's10': process_value(instance.s10),
+        's11': process_value(instance.s11),
+        's12': process_value(instance.s12),
+        's13': process_value(instance.s13),
+        's14': process_value(instance.s14),
+        's15': process_value(instance.s15),
+        's16': process_value(instance.s16),
+        's17': process_value(instance.s17),
+        's18': process_value(instance.s18),
+    }
+
+    ChargerTankHistory.objects.create(
+        location=instance.location,
+        temp_type=instance.temp_type,
+        record_datetime=instance.record_datetime,
+        **processed_values,
+    )
+
+    threading.Thread(target=async_upsert_to_mssql, args=(instance, processed_values)).start()
