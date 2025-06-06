@@ -8,6 +8,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/charger-tank/', include('charger_tank.urls')),
     path('api/v1/clientsetting/', include('clientsetting.urls')),
+    path('api/v1/dbconfig/', include('dbconfig.urls')),
     path('api-auth/', include('rest_framework.urls')),
     path('', include('main.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(

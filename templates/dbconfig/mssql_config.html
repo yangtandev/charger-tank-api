@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>MSSQL Connection Config</title>
+		<style>
+			body {
+				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+				background-color: #f4f6f9;
+				padding: 40px;
+			}
+
+			.container {
+				background-color: #ffffff;
+				max-width: 500px;
+				margin: auto;
+				padding: 30px;
+				border-radius: 12px;
+				box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+			}
+
+			h1 {
+				text-align: center;
+				color: #333;
+				margin-bottom: 30px;
+			}
+
+			form label {
+				display: block;
+				margin-bottom: 6px;
+				font-weight: 600;
+				color: #333;
+			}
+
+			form input[type='text'],
+			form input[type='number'],
+			form input[type='password'] {
+				width: 100%;
+				padding: 10px;
+				margin-bottom: 20px;
+				border: 1px solid #ccc;
+				border-radius: 6px;
+				font-size: 14px;
+			}
+
+			button {
+				width: 100%;
+				padding: 12px;
+				background-color: #007acc;
+				color: white;
+				font-size: 16px;
+				font-weight: bold;
+				border: none;
+				border-radius: 6px;
+				cursor: pointer;
+				transition: background-color 0.3s;
+			}
+
+			button:hover {
+				background-color: #005fa3;
+			}
+
+			.message {
+				margin-top: 20px;
+				padding: 12px;
+				border-radius: 6px;
+				text-align: center;
+			}
+
+			.message.success {
+				background-color: #d4edda;
+				color: #155724;
+			}
+
+			.message.error {
+				background-color: #f8d7da;
+				color: #721c24;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Configure MSSQL Connection</h1>
+
+			<form method="post">
+				{% csrf_token %}
+				<label>{{ form.label.label }}</label>
+				{{ form.label }}
+
+				<label>{{ form.driver.label }}</label>
+				{{ form.driver }}
+
+				<label>{{ form.host.label }}</label>
+				{{ form.host }}
+
+				<label>{{ form.port.label }}</label>
+				{{ form.port }}
+
+				<label>{{ form.database.label }}</label>
+				{{ form.database }}
+
+				<label>{{ form.username.label }}</label>
+				{{ form.username }}
+
+				<label>{{ form.password.label }}</label>
+				{{ form.password }}
+
+				<label>{{ form.schema.label }}</label>
+				{{ form.schema }}
+
+				<label>{{ form.table_name.label }}</label>
+				{{ form.table_name }}
+
+				<button type="submit">Test Connection</button>
+			</form>
+
+			{% if result %}
+			<div class="message success">
+				Connection successful!<br />Server time: {{ result }}
+			</div>
+			{% elif error %}
+			<div class="message error">Connection failed:<br />{{ error }}</div>
+			{% endif %}
+		</div>
+	</body>
+</html>

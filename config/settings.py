@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     # Project apps
     'charger_tank',
     'clientsetting',
+    'dbconfig'
 ]
 
 MIDDLEWARE = [
