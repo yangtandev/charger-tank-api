@@ -7,8 +7,8 @@ urlpatterns = [
     path('current/<int:pk>/', views.ChargerTankCurrentDetailView.as_view()),
 
     # History
-    path('history/', views.ChargerTankHistoryListCreateView.as_view()),
-    path('history/<int:pk>/', views.ChargerTankHistoryDetailView.as_view()),
+    path('history/', views.ChargerTankHistory5MinListCreateView.as_view()),
+    path('history/<int:pk>/', views.ChargerTankHistory5MinDetailView.as_view()),
 
     # Status
     path('status/', views.ChargerTankStatusListCreateView.as_view()),

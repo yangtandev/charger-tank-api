@@ -58,8 +58,35 @@ class ChargerTankHistory(models.Model):
     class Meta:
         db_table = 'charger_tank_history'
 
+# 3. 溫度歷史紀錄表（每五分鐘）
+class ChargerTankHistory5Min(models.Model):
+    id = models.AutoField(primary_key=True)
+    location = models.CharField(max_length=10, db_column='Location')
+    temp_type = models.IntegerField(db_column='Temptype')
+    record_datetime = models.DateTimeField(default=timezone.now, db_column='RecDT')
+    s01 = models.IntegerField(null=True, blank=True, db_column='S01')
+    s02 = models.IntegerField(null=True, blank=True, db_column='S02')
+    s03 = models.IntegerField(null=True, blank=True, db_column='S03')
+    s04 = models.IntegerField(null=True, blank=True, db_column='S04')
+    s05 = models.IntegerField(null=True, blank=True, db_column='S05')
+    s06 = models.IntegerField(null=True, blank=True, db_column='S06')
+    s07 = models.IntegerField(null=True, blank=True, db_column='S07')
+    s08 = models.IntegerField(null=True, blank=True, db_column='S08')
+    s09 = models.IntegerField(null=True, blank=True, db_column='S09')
+    s10 = models.IntegerField(null=True, blank=True, db_column='S10')
+    s11 = models.IntegerField(null=True, blank=True, db_column='S11')
+    s12 = models.IntegerField(null=True, blank=True, db_column='S12')
+    s13 = models.IntegerField(null=True, blank=True, db_column='S13')
+    s14 = models.IntegerField(null=True, blank=True, db_column='S14')
+    s15 = models.IntegerField(null=True, blank=True, db_column='S15')
+    s16 = models.IntegerField(null=True, blank=True, db_column='S16')
+    s17 = models.IntegerField(null=True, blank=True, db_column='S17')
+    s18 = models.IntegerField(null=True, blank=True, db_column='S18')
 
-# 3. 狀態實時表（記錄環境溫度與 16 台充電機狀態）
+    class Meta:
+        db_table = 'charger_tank_history_5min'
+
+# 4. 狀態實時表（記錄環境溫度與 16 台充電機狀態）
 class ChargerTankStatus(models.Model):
     id = models.AutoField(primary_key=True)
     location = models.CharField(max_length=10, db_column='Location')
@@ -85,7 +112,7 @@ class ChargerTankStatus(models.Model):
     class Meta:
         db_table = 'charger_tank_status'
 
-# 4. 狀態歷史表（記錄環境溫度與 16 台充電機狀態）
+# 5. 狀態歷史表（記錄環境溫度與 16 台充電機狀態）
 class ChargerTankStatusHistory(models.Model):
     id = models.AutoField(primary_key=True)
     location = models.CharField(max_length=10, db_column='Location')

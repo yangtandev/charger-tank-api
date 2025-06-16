@@ -1,8 +1,9 @@
 from rest_framework import generics
-from .models import ChargerTankCurrent, ChargerTankHistory, ChargerTankStatus, ChargerTankStatusHistory
+from .models import ChargerTankCurrent, ChargerTankHistory, ChargerTankHistory5Min, ChargerTankStatus, ChargerTankStatusHistory
 from .serializers import (
     ChargerTankCurrentSerializer,
     ChargerTankHistorySerializer,
+    ChargerTankHistory5MinSerializer,
     ChargerTankStatusSerializer,
     ChargerTankStatusHistorySerializer
 )
@@ -80,6 +81,14 @@ class ChargerTankHistoryDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = ChargerTankHistory.objects.all()
     serializer_class = ChargerTankHistorySerializer
 
+# ChargerTankHistory5Min
+class ChargerTankHistory5MinListCreateView(FilterableQuerysetMixin, generics.ListCreateAPIView):
+    queryset = ChargerTankHistory5Min.objects.all()
+    serializer_class = ChargerTankHistory5MinSerializer
+
+class ChargerTankHistory5MinDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = ChargerTankHistory5Min.objects.all()
+    serializer_class = ChargerTankHistory5MinSerializer
 
 # ChargerTankStatus
 class ChargerTankStatusListCreateView(FilterableQuerysetMixin, generics.ListCreateAPIView):
