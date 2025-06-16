@@ -1,0 +1,60 @@
+INFO 2025-06-16 17:30:01 signals [MSSQL upsert success] 2025-06-16 09:30:00+00:00 @ B
+INFO 2025-06-16 17:30:01 signals [MSSQL upsert success] 2025-06-16 09:30:00+00:00 @ B
+INFO 2025-06-16 17:30:01 signals [MSSQL upsert success] 2025-06-16 09:30:00+00:00 @ B
+INFO 2025-06-16 17:35:01 signals [MSSQL upsert success] 2025-06-16 09:35:00+00:00 @ B
+INFO 2025-06-16 17:35:01 signals [MSSQL upsert success] 2025-06-16 09:35:00+00:00 @ B
+INFO 2025-06-16 17:35:01 signals [MSSQL upsert success] 2025-06-16 09:35:00+00:00 @ B
+ERROR 2025-06-16 17:40:06 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=1, RecDT=2025-06-16 09:40:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 41, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 17:40:06 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=2, RecDT=2025-06-16 09:40:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 41, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 17:40:06 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=3, RecDT=2025-06-16 09:40:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 41, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 17:45:06 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=1, RecDT=2025-06-16 09:45:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 41, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 17:45:06 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=2, RecDT=2025-06-16 09:45:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 41, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 17:45:06 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=3, RecDT=2025-06-16 09:45:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 41, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 17:50:06 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=1, RecDT=2025-06-16 09:50:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 41, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 17:50:06 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=2, RecDT=2025-06-16 09:50:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 41, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 17:50:06 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=3, RecDT=2025-06-16 09:50:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 41, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+INFO 2025-06-16 17:55:01 signals [MSSQL upsert success] 2025-06-16 09:55:00+00:00 @ B
+INFO 2025-06-16 17:55:01 signals [MSSQL upsert success] 2025-06-16 09:55:00+00:00 @ B
+INFO 2025-06-16 17:55:01 signals [MSSQL upsert success] 2025-06-16 09:55:00+00:00 @ B
+INFO 2025-06-16 18:00:01 signals [MSSQL upsert success] 2025-06-16 10:00:00+00:00 @ B
+INFO 2025-06-16 18:00:01 signals [MSSQL upsert success] 2025-06-16 10:00:00+00:00 @ B
+INFO 2025-06-16 18:00:01 signals [MSSQL upsert success] 2025-06-16 10:00:00+00:00 @ B
+INFO 2025-06-16 18:05:01 signals [MSSQL upsert success] 2025-06-16 10:05:00+00:00 @ B
+INFO 2025-06-16 18:05:01 signals [MSSQL upsert success] 2025-06-16 10:05:00+00:00 @ B
+INFO 2025-06-16 18:05:01 signals [MSSQL upsert success] 2025-06-16 10:05:00+00:00 @ B

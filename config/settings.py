@@ -3,6 +3,18 @@ from logging.handlers import RotatingFileHandler
 from pathlib import Path
 # import datetime
 import environ
+import logging
+from datetime import datetime
+import pytz
+
+class TaipeiTimeFormatter(logging.Formatter):
+    def formatTime(self, record, datefmt=None):
+        tz = pytz.timezone("Asia/Taipei")
+        dt = datetime.fromtimestamp(record.created, tz)
+        if datefmt:
+            return dt.strftime(datefmt)
+        else:
+            return dt.isoformat()
 
 # Time Zone
 TIME_ZONE = 'Asia/Taipei'
@@ -195,35 +207,43 @@ SCHEDULER_CONFIG = {
 SCHEDULER_AUTOSTART = True
 
 # --- Logging configuration ---
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'formatters': {
         'verbose': {
+            '()': TaipeiTimeFormatter,
             'format': '{levelname} {asctime} {module} {message}',
             'style': '{',
+            'datefmt': '%Y-%m-%d %H:%M:%S',
         },
     },
     'handlers': {
-        'file': {
+        'error_file': {
             'level': 'ERROR',
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(BASE_DIR, 'django_errors.log'),
-            'maxBytes': 5 * 1024 * 1024,  # 5MB
-            'backupCount': 5,  # 最多保留 5 個舊檔案: django_errors.log.1 ~ .5
+            'filename': os.path.join(BASE_DIR, 'charger_tank_error.log'),
+            'maxBytes': 5 * 1024 * 1024,
+            'backupCount': 5,
+            'formatter': 'verbose',
+        },
+        'info_file': {
+            'level': 'INFO',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(BASE_DIR, 'charger_tank_info.log'),
+            'maxBytes': 5 * 1024 * 1024,
+            'backupCount': 5,
             'formatter': 'verbose',
         },
     },
     'loggers': {
-        'django': {
-            'handlers': ['file'],
-            'level': 'ERROR',
-            'propagate': True,
-        },
         'charger_tank': {
-            'handlers': ['file'],
-            'level': 'ERROR',
+            'handlers': ['info_file', 'error_file'],
+            'level': 'INFO',
             'propagate': False,
         },
     },
 }
+

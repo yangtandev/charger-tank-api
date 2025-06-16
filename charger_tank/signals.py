@@ -6,6 +6,8 @@ from django.dispatch import receiver
 from datetime import datetime
 from .models import ChargerTankCurrent, ChargerTankHistory, ChargerTankHistory5Min
 from dbconfig.models import MSSQLConfig
+from django.forms.models import model_to_dict
+
 
 logger = logging.getLogger(__name__)
 
@@ -65,7 +67,7 @@ def async_upsert_to_mssql(instance):
 
             cursor.execute(sql, params)
             conn.commit()
-            print(f"[MSSQL upsert success] {instance.record_datetime} @ {instance.location}")
+            logger.info(f"[MSSQL upsert success] {instance.record_datetime} @ {instance.location}")
 
     except MSSQLConfig.DoesNotExist:
         print(f"[MSSQL upsert error] no MSSQL config found")
