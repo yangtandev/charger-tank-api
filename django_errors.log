@@ -1,0 +1,360 @@
+ERROR 2025-06-16 05:13:10,538 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=1, RecDT=2025-06-16 05:10:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 37, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 05:13:10,548 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=3, RecDT=2025-06-16 05:10:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 37, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 05:13:10,640 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=2, RecDT=2025-06-16 05:10:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 37, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 05:29:29,976 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=1, RecDT=2025-06-16 05:25:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 37, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 05:29:29,980 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=2, RecDT=2025-06-16 05:25:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 37, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 05:29:29,993 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=3, RecDT=2025-06-16 05:25:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 37, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 05:34:29,977 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=2, RecDT=2025-06-16 05:30:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 37, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 05:34:29,987 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=3, RecDT=2025-06-16 05:30:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 37, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 05:34:31,185 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=1, RecDT=2025-06-16 05:30:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 37, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 05:42:43,866 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/pvms-lc/dalei-api/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/home/pvms-lc/dalei-api/venv/lib/python3.10/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/pvms-lc/dalei-api/venv/lib/python3.10/site-packages/django/template/response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/pvms-lc/dalei-api/venv/lib/python3.10/site-packages/django/template/response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/pvms-lc/dalei-api/venv/lib/python3.10/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: index.html
+ERROR 2025-06-16 06:04:10,522 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=1, RecDT=2025-06-16 06:00:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 37, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 06:04:10,526 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=2, RecDT=2025-06-16 06:00:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 37, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 06:04:10,532 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=3, RecDT=2025-06-16 06:00:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 37, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 06:09:10,507 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=1, RecDT=2025-06-16 06:05:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 37, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 06:09:10,514 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=2, RecDT=2025-06-16 06:05:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 37, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 06:09:10,521 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=3, RecDT=2025-06-16 06:05:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 37, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 06:14:10,504 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=1, RecDT=2025-06-16 06:10:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 37, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 06:14:10,506 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=2, RecDT=2025-06-16 06:10:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 37, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 06:14:10,510 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=3, RecDT=2025-06-16 06:10:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 37, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 06:19:10,511 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=1, RecDT=2025-06-16 06:15:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 37, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 06:19:10,514 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=2, RecDT=2025-06-16 06:15:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 37, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 06:19:10,523 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=3, RecDT=2025-06-16 06:15:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 37, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 06:24:10,506 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=1, RecDT=2025-06-16 06:20:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 37, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 06:24:10,509 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=2, RecDT=2025-06-16 06:20:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 37, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 06:24:10,517 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=3, RecDT=2025-06-16 06:20:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 37, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 06:29:25,877 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=1, RecDT=2025-06-16 06:25:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 06:29:25,877 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=2, RecDT=2025-06-16 06:25:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 06:29:25,879 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=3, RecDT=2025-06-16 06:25:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 06:34:25,858 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=1, RecDT=2025-06-16 06:30:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 06:34:25,865 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=2, RecDT=2025-06-16 06:30:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 06:34:25,871 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=3, RecDT=2025-06-16 06:30:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 07:00:41,668 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=1, RecDT=2025-06-16 07:00:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 07:00:41,673 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=2, RecDT=2025-06-16 07:00:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 07:00:41,681 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=3, RecDT=2025-06-16 07:00:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 07:05:39,179 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=1, RecDT=2025-06-16 07:05:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 07:05:39,185 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=2, RecDT=2025-06-16 07:05:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 07:05:39,188 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=3, RecDT=2025-06-16 07:05:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 07:15:39,171 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=1, RecDT=2025-06-16 07:15:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 07:15:39,183 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=2, RecDT=2025-06-16 07:15:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 07:15:39,189 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=3, RecDT=2025-06-16 07:15:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 07:20:39,173 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=1, RecDT=2025-06-16 07:20:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 07:20:39,182 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=2, RecDT=2025-06-16 07:20:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 07:20:39,187 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=3, RecDT=2025-06-16 07:20:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 07:25:39,173 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=1, RecDT=2025-06-16 07:25:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 07:25:39,178 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=2, RecDT=2025-06-16 07:25:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 07:25:39,185 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=3, RecDT=2025-06-16 07:25:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 07:30:39,174 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=1, RecDT=2025-06-16 07:30:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 07:30:39,179 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=2, RecDT=2025-06-16 07:30:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 07:30:39,188 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=3, RecDT=2025-06-16 07:30:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 07:35:39,173 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=1, RecDT=2025-06-16 07:35:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 07:35:39,181 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=2, RecDT=2025-06-16 07:35:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 07:35:39,187 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=3, RecDT=2025-06-16 07:35:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 07:40:39,178 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=1, RecDT=2025-06-16 07:40:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 07:40:39,182 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=2, RecDT=2025-06-16 07:40:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 07:40:39,187 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=3, RecDT=2025-06-16 07:40:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 07:45:39,176 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=1, RecDT=2025-06-16 07:45:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 07:45:39,181 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=2, RecDT=2025-06-16 07:45:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 07:45:39,187 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=3, RecDT=2025-06-16 07:45:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 07:50:39,175 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=1, RecDT=2025-06-16 07:50:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 07:50:39,178 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=2, RecDT=2025-06-16 07:50:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 07:50:39,183 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=3, RecDT=2025-06-16 07:50:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 07:55:39,175 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=1, RecDT=2025-06-16 07:55:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 07:55:39,182 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=2, RecDT=2025-06-16 07:55:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 07:55:39,188 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=3, RecDT=2025-06-16 07:55:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 08:00:39,178 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=1, RecDT=2025-06-16 08:00:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    cursor.execute(sql, params)
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 08:00:39,185 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=2, RecDT=2025-06-16 08:00:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    cursor.execute(sql, params)
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 08:00:39,189 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=3, RecDT=2025-06-16 08:00:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 66, in async_upsert_to_mssql
+    cursor.execute(sql, params)
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 08:20:46,845 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=1, RecDT=2025-06-16 08:20:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 39, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 08:20:46,851 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=2, RecDT=2025-06-16 08:20:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 39, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+ERROR 2025-06-16 08:20:46,857 signals [MSSQL upsert error] Failed to upsert record (Location=B, TempType=3, RecDT=2025-06-16 08:20:00+00:00): ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')
+Traceback (most recent call last):
+  File "/home/pvms-lc/dalei-api/charger_tank/signals.py", line 39, in async_upsert_to_mssql
+    with pyodbc.connect(conn_str, timeout=5) as conn:
+pyodbc.OperationalError: ('HYT00', '[HYT00] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0) (SQLDriverConnect)')

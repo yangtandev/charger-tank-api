@@ -1,12 +1,17 @@
 import pyodbc
 import threading
+import logging
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from datetime import datetime
 from .models import ChargerTankCurrent, ChargerTankHistory, ChargerTankHistory5Min
 from dbconfig.models import MSSQLConfig
 
+logger = logging.getLogger(__name__)
+
 def process_value(val):
     return 0 if val == 999 else int(round(val / 10))
+
 
 def async_upsert_to_mssql(instance):
     try:
@@ -60,11 +65,18 @@ def async_upsert_to_mssql(instance):
 
             cursor.execute(sql, params)
             conn.commit()
+            print(f"[MSSQL upsert success] {instance.record_datetime} @ {instance.location}")
 
     except MSSQLConfig.DoesNotExist:
-        print("[MSSQL upsert error] No MSSQL config found.")
+        print(f"[MSSQL upsert error] no MSSQL config found")
+        logger.error("[MSSQL upsert error] No MSSQL config found.")
     except Exception as e:
         print(f"[MSSQL upsert error] {e}")
+        logger.error(
+            f"[MSSQL upsert error] Failed to upsert record "
+            f"(Location={instance.location}, TempType={instance.temp_type}, RecDT={instance.record_datetime}): {e}",
+            exc_info=True
+        )
 
 @receiver(post_save, sender=ChargerTankCurrent)
 def copy_to_history(sender, instance, created, **kwargs):
@@ -98,4 +110,4 @@ def copy_to_history(sender, instance, created, **kwargs):
 
 @receiver(post_save, sender=ChargerTankHistory5Min)
 def write_back_to_client_db(sender, instance, created, **kwargs):
-        threading.Thread(target=async_upsert_to_mssql, args=(instance,)).start()
+    threading.Thread(target=async_upsert_to_mssql, args=(instance,)).start()

@@ -167,11 +167,11 @@ def start_scheduler():
         id='update_charger_status'
     )
 
-    # 每5分鐘計算歷史記錄平均值
+    # 每分鐘計算歷史記錄平均值
     scheduler.add_job(
         calculate_5min_averages,
         'interval',
-        minutes=5,
+        minutes=1,
         id='calculate_5min_averages'
     )
 

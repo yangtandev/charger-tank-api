@@ -1,4 +1,5 @@
 import os
+from logging.handlers import RotatingFileHandler
 from pathlib import Path
 # import datetime
 import environ
@@ -192,3 +193,37 @@ SCHEDULER_CONFIG = {
     },
 }
 SCHEDULER_AUTOSTART = True
+
+# --- Logging configuration ---
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'file': {
+            'level': 'ERROR',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(BASE_DIR, 'django_errors.log'),
+            'maxBytes': 5 * 1024 * 1024,  # 5MB
+            'backupCount': 5,  # 最多保留 5 個舊檔案: django_errors.log.1 ~ .5
+            'formatter': 'verbose',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+        'charger_tank': {
+            'handlers': ['file'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+    },
+}
