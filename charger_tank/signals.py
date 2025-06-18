@@ -6,7 +6,7 @@ from django.dispatch import receiver
 from datetime import datetime
 from .models import ChargerTankCurrent, ChargerTankHistory, ChargerTankHistory5Min
 from dbconfig.models import MSSQLConfig
-from django.forms.models import model_to_dict
+from datetime import timedelta
 
 
 logger = logging.getLogger(__name__)
@@ -54,14 +54,16 @@ def async_upsert_to_mssql(instance):
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
             """
 
+            # 將 UTC 時間轉換為不帶時區的 datetime
+            record_dt = instance.record_datetime.replace(tzinfo=None)+ timedelta(hours=8)
             params = (
                 instance.location,
                 instance.temp_type,
-                instance.record_datetime,
+                record_dt,
                 *s_values,
                 instance.location,
                 instance.temp_type,
-                instance.record_datetime,
+                record_dt,
                 *s_values,
             )
 
