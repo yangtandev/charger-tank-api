@@ -110,20 +110,15 @@ def calculate_5min_averages():
                 adjusted_minutes = (minutes // 5) * 5
                 record_time = record_time.replace(minute=adjusted_minutes)
 
-                existing_record = ChargerTankHistory5Min.objects.filter(
+                # 使用 get_or_create 避免重複創建
+                obj, created = ChargerTankHistory5Min.objects.get_or_create(
                     location=location,
                     temp_type=temp_type,
-                    record_datetime=record_time
-                ).first()
+                    record_datetime=record_time,
+                    defaults=processed_averages
+                )
 
-                if not existing_record:
-                    # 創建新的5分鐘平均記錄
-                    ChargerTankHistory5Min.objects.create(
-                        location=location,
-                        temp_type=temp_type,
-                        record_datetime=record_time,
-                        **processed_averages
-                    )
+                if created:
                     records_created += 1
                     print(f"Created 5-min average for location: {location}, temp_type: {temp_type}")
                 else:
