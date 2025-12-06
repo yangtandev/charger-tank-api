@@ -11,8 +11,14 @@ from datetime import timedelta
 
 logger = logging.getLogger(__name__)
 
+
 def process_value(val):
-    return 0 if val == 999 else int(round(val / 10))
+    if val is None:
+        return 0
+    elif val == 999:
+        return 0
+    else:
+        return int(round(val / 10))
 
 
 def async_upsert_to_mssql(instance):
@@ -55,7 +61,8 @@ def async_upsert_to_mssql(instance):
             """
 
             # 將 UTC 時間轉換為不帶時區的 datetime
-            record_dt = instance.record_datetime.replace(tzinfo=None)+ timedelta(hours=8)
+            record_dt = instance.record_datetime.replace(
+                tzinfo=None) + timedelta(hours=8)
             params = (
                 instance.location,
                 instance.temp_type,
@@ -69,7 +76,8 @@ def async_upsert_to_mssql(instance):
 
             cursor.execute(sql, params)
             conn.commit()
-            logger.info(f"[MSSQL upsert success] {instance.record_datetime} @ {instance.location}")
+            logger.info(
+                f"[MSSQL upsert success] {instance.record_datetime} @ {instance.location}")
 
     except MSSQLConfig.DoesNotExist:
         print(f"[MSSQL upsert error] no MSSQL config found")
@@ -81,6 +89,7 @@ def async_upsert_to_mssql(instance):
             f"(Location={instance.location}, TempType={instance.temp_type}, RecDT={instance.record_datetime}): {e}",
             exc_info=True
         )
+
 
 @receiver(post_save, sender=ChargerTankCurrent)
 def copy_to_history(sender, instance, created, **kwargs):
@@ -111,6 +120,7 @@ def copy_to_history(sender, instance, created, **kwargs):
         record_datetime=instance.record_datetime,
         **processed_values,
     )
+
 
 @receiver(post_save, sender=ChargerTankHistory5Min)
 def write_back_to_client_db(sender, instance, created, **kwargs):
